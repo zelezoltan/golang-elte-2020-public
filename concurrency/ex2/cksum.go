@@ -48,7 +48,7 @@ func Files() []string {
 		// Walk will return no error, because all WalkFunc always returns nil.
 		filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 			if err != nil {
-				fmt.Errorf("ERROR: unable to access %q\n", path)
+				fmt.Printf("ERROR: unable to access %q\n", path)
 				return nil
 			}
 			if info.Mode()&os.ModeType != 0 {

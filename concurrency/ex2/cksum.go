@@ -15,12 +15,12 @@ func main() {
 	for _, path := range Files() {
 		hash, err := Hash(path)
 		if err != nil {
-			fmt.Printf("ERROR: %s", err)
+			fmt.Printf("ERROR: %s\n", err)
 			continue
 		}
 		fmt.Printf("%x\t%s\n", hash, path)
 	}
-	// END
+	// END OMIT
 }
 
 // Hash calculates a checksum of a file.
@@ -48,7 +48,7 @@ func Files() []string {
 		// Walk will return no error, because all WalkFunc always returns nil.
 		filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 			if err != nil {
-				fmt.Printf("ERROR: unable to access %q", path)
+				fmt.Errorf("ERROR: unable to access %q\n", path)
 				return nil
 			}
 			if info.Mode()&os.ModeType != 0 {

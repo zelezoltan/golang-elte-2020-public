@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	start := time.Now()
 	// TODO: close the channel after the last send
 	type result struct {
 		path string
@@ -27,6 +28,7 @@ func main() {
 	}
 	// END OMIT
 	fmt.Println(results)
+	fmt.Println("took ", time.Since(start))
 }
 
 func Hash(path string) int {

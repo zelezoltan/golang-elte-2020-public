@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	start := time.Now()
 	// TODO: parallelize the calculation
 	results := make(map[string]int)
 	for _, path := range Files() {
@@ -14,6 +15,7 @@ func main() {
 	// END OMIT
 
 	fmt.Println(results)
+	fmt.Println("took ", time.Since(start))
 }
 
 func Hash(path string) int {

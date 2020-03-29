@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	start := time.Now()
 	// TODO: do not print results in case of any error
 	results := make(map[string]int)
 	mu := sync.Mutex{}
@@ -27,6 +28,7 @@ func main() {
 	wg.Wait()
 	fmt.Println(results) // HL
 	// END OMIT
+	fmt.Println("took ", time.Since(start))
 }
 
 func Hash(path string) (int, error) {

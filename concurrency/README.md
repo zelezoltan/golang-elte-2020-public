@@ -15,3 +15,10 @@ Lock, WaitGroup and Data Races
   - deadlock: https://play.golang.org/p/iTSdC0h_tKi
 - exercise 6: https://play.golang.org/p/LtfgGhZOS1F
 - exercise for home: [on github](https://github.com/hu-univ-golang/golang-elte-2020-public/blob/master/concurrency/ex7/watch.go)
+
+Context, Timeout and Rate Control
+
+- exercise 8: https://play.golang.org/p/9IcfRw-rORl
+- exercise 9: https://play.golang.org/p/t-cLLUpGXTm
+- exercise 10: https://play.golang.org/p/vmZ3ZNifn_V
+- exercise for home: [on github](https://github.com/hu-univ-golang/golang-elte-2020-public/blob/master/concurrency/exb/watch.go)

@@ -23,11 +23,11 @@ Introduction to the language, with [exercises](intro/README.md):
 
 ### 2020-03-16
 
-Concurrency 1.
+[Concurrency 1.](concurrency/concurrency-1.pdf)
 
-### 2020-03-23
+### 2020-03-23 
 
-Concurrency 2.
+[Concurrency 2.](concurrency/concurrency-2.pdf)
 
 ### 2020-03-30
 
@@ -35,15 +35,15 @@ Concurrency 3.
 
 ### 2020-04-06
 
+Unit testing with [slides](testing.pdf) and exercises in the `testing` directory.
+
+  - https://code.google.com/p/go-wiki/wiki/TableDrivenTests
+
 ### 2020-04-13
 
 Easter holiday.
 
 ### 2020-04-20
-
-Unit testing with [slides](testing.pdf) and exercises in the `testing` directory.
-
-  - https://code.google.com/p/go-wiki/wiki/TableDrivenTests
 
 ### 2020-04-27
 

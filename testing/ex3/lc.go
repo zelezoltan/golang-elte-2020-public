@@ -5,7 +5,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/hu-univ-golang/golang-elte-2020-public/testing/ex3/lines"
+	"github.com/hu-univ-golang/golang-elte-2019-public/testing/ex3/lines"
 	"log"
 	"os"
 )

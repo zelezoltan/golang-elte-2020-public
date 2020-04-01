@@ -31,13 +31,11 @@ Introduction to the language, with [exercises](intro/README.md):
 
 ### 2020-03-30
 
-Concurrency 3.
+[Concurrency 3.](concurrency/concurrency-3.pdf)
 
 ### 2020-04-06
 
-Unit testing with [slides](testing.pdf) and exercises in the `testing` directory.
-
-  - https://code.google.com/p/go-wiki/wiki/TableDrivenTests
+[Unit testing](testing/testing.pdf)
 
 ### 2020-04-13
 

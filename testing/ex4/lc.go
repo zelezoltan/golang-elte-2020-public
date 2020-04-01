@@ -5,7 +5,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/hu-univ-golang/golang-elte-2019-public/testing/ex4/lines"
+	"github.com/hu-univ-golang/golang-elte-2020-public/testing/ex4/lines"
 )
 
 func main() {

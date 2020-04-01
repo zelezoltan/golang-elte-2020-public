@@ -5,7 +5,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/hu-univ-golang/golang-elte-2019-public/testing/ex3/lines"
+	"github.com/hu-univ-golang/golang-elte-2020-public/testing/ex3/lines"
 	"log"
 	"os"
 )
@@ -14,7 +14,7 @@ import (
 func lineCount(path string) int {
 	f, err := os.Open(path)
 	if err != nil {
-		log.Fatal(err) // DO NOT PANIC!
+		log.Fatal(err) // TODO: DO NOT PANIC!
 	}
 	defer f.Close()
 	s := bufio.NewScanner(f)

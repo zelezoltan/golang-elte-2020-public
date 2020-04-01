@@ -11,9 +11,9 @@ import (
 
 func lineCount(path string) int {
 	f, err := os.Open(path)
-	if err != nil { // HLnottested
-		log.Fatal(err) // HLnottested
-	} // HLnottested
+	if err != nil {
+		log.Fatal(err)
+	}
 	defer f.Close()
 	s := bufio.NewScanner(f)
 	lc := 0
@@ -22,9 +22,9 @@ func lineCount(path string) int {
 	}
 	return lc
 }
-func main() { // HLnottested
-	flag.Parse()                       // HLnottested
-	for _, path := range flag.Args() { // HLnottested
-		fmt.Printf("%d\t%s\n", lineCount(path), path) // HLnottested
-	} // HLnottested
-} // HLnottested
+func main() {
+	flag.Parse()
+	for _, path := range flag.Args() {
+		fmt.Printf("%d\t%s\n", lineCount(path), path)
+	}
+}

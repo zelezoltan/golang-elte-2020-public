@@ -25,7 +25,7 @@ func TestLoad(t *testing.T) {
 		}
 		// START OMIT
 		if true { // TODO: compare lines and tc.lines
-			t.Errorf("load(%q) returned diff (-want +got):\n%s", tc.path,
+			t.Errorf("load(%q) returned diff (-got → +want):\n%s", tc.path,
 				"") // TODO: print details of how the result differs from expected
 		}
 		// END OMIT

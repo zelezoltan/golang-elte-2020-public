@@ -16,8 +16,6 @@ func main() {
 		_, _ = w.Write([]byte("It works!"))
 	})
 
-
-
 	log.Println("Listening:", *addr)
 	err := http.ListenAndServeTLS(*addr, *cert, *privKey, nil)
 	if err != nil {

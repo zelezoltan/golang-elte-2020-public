@@ -70,7 +70,7 @@ func main() {
 	r.Group(func(r chi.Router) {
 		r.Use(betterLoggerMiddleware)
 		r.Get("/longtime2", func(w http.ResponseWriter, r *http.Request) {
-			requestID, _ := r.Context().Value(requestIDContextKey).(string)
+			requestID, _ := r.Context().Value(requestIDContextKey).(string) // Don't convert without check, but this returns and empty string when there's no context value
 
 			rnd := rand.Intn(5)
 			fmt.Println("Sleep time:", rnd)

@@ -5,7 +5,6 @@
 {{range $val := .SomeValues}}
      <li>{{ $val.Key }} -> {{$val.Val}}</li>
 {{end}}
-
-<ul>
+</ul>
 </body>
 </html>

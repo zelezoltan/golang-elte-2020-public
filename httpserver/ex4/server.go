@@ -10,7 +10,7 @@ import (
 func main() {
 	addr := flag.String("listen", ":8080", "Listening address")
 	staticDir := flag.String("static", "./httpserver/ex4/static", "Static folder")
-	templateDir := flag.String("templateIdr", "./httpserver/ex4/template", "Template folder")
+	templateDir := flag.String("templateDir", "./httpserver/ex4/template", "Template folder")
 	flag.Parse()
 
 	log.Println("Static folder:", *staticDir)

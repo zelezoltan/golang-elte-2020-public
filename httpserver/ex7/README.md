@@ -4,7 +4,7 @@ Here you see a bit more complex example with global context handling like db con
 
 I'll use some 3rd party libraries here and a db connection:
 - [Chi](https://github.com/go-chi/chi) - Easier HTTP routing
-- [MySQL driver](github.com/go-sql-driver/mysql) - MySQL driver for the built in `database/sql` interfaces
+- [MySQL driver](https://github.com/go-sql-driver/mysql) - MySQL driver for the built in `database/sql` interfaces
 - [SQLx](https://github.com/jmoiron/sqlx) - Small additional lib for easier SQL queries (result auto mapping to structs)
 - [Zap](https://github.com/uber-go/zap) - Better, structured logger 
 

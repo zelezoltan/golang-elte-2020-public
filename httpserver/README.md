@@ -1,6 +1,6 @@
 # HTTP Server examples
 
-- [Simple http](ex1/server.go) - Simplest http server with simple GET handler
+- [Simple http](ex1/README.md) - Simplest http server with simple GET handler
 - [Multiple handlers](ex2/README.md) - Simple http server with form and I/O handling
 - [HTTPS](ex3/README.md) - Add HTTPS support
 - [Render HTML](ex4/README.md) - HTML rendering and static serving

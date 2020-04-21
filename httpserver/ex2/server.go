@@ -30,7 +30,7 @@ func main() {
 
 		name := r.FormValue("name")
 		password := r.FormValue("password")
-		fmt.Println("Name:", name, "Pass", password)
+		fmt.Println("Name:", name, "Pass:", password)
 
 		if name == "" || password == "" {
 			http.Error(w, "empty name or password", http.StatusBadRequest)

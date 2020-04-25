@@ -81,7 +81,7 @@ func (a *App) handleAdd(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res, err := a.db.Exec("INSERT INTO message (`name`, `message`, `created`) VALUES (?,?,datetime('now'))", input.Name, input.Message)
+	res, err := a.db.Exec("INSERT INTO message (`name`, `message`) VALUES (?,?)", input.Name, input.Message)
 	if err != nil {
 		sendError(a.logger, w, err, http.StatusInternalServerError)
 		return

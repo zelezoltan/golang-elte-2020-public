@@ -7,6 +7,7 @@
 - [Custom mux](ex5/README.md) - Add custom mux
 - [Middleware magic](ex6/README.md) - Some middleware magic
 - [Complex example](ex7/README.md) - Complex example with global context
+- [HTTP testing](ex8/README.md) - Testing HTTP example
 
 
 # (Hazi) feladat:

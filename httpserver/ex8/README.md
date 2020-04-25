@@ -1,6 +1,6 @@
 # HTTP testing example
 
-This is the same app which we used in `ex7`.
+This is the same app which we used in `ex7` with some modifications.
 
 I'll use some 3rd party libraries here and a db connection:
 - [Chi](https://github.com/go-chi/chi) - Easier HTTP routing

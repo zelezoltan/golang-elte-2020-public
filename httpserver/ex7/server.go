@@ -23,7 +23,7 @@ func main() {
 	addr := flag.String("listen", ":8080", "Listening address")
 
 	mysqlConfig := flag.String("mysqldb", "root:root@tcp(127.0.0.1:3306)/testdb?parseTime=true", "Mysql database connection string")
-	sqliteConfig := flag.String("sqlitedb", "file:httpserver/ex7/sqlite.db?_loc=auto&cache=shared", "SQLite database connection string")
+	sqliteConfig := flag.String("sqlitedb", "file:httpserver/ex7/sqlite.db?cache=shared&parseTime=true", "SQLite database connection string")
 	db := flag.String("db", "sqlite", "Supported database (sqlite, mysql)")
 	flag.Parse()
 

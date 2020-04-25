@@ -40,11 +40,11 @@ SQLite structure:
 
 ```sqlite
 CREATE TABLE "message" (
-	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"name"	TEXT NOT NULL,
-	"message"	TEXT NOT NULL,
-	"created"	TEXT NOT NULL
-);
+  	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  	"name"	TEXT NOT NULL,
+  	"message"	TEXT NOT NULL,
+  	"created"	timestamp NOT NULL
+  );
 ```
 
 

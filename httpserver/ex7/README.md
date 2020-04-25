@@ -56,6 +56,12 @@ $ go run httpserver/ex7/server.go httpserver/ex7/app.go
 The first run takes a while, because the sqlite driver uses CGO and it'll compile the SQLite C libraries.
 (You could use the `-v` flag to see what happens.)
 
+To change the database use the `-db` flag, for example:
+```
+$ go run httpserver/ex7/server.go httpserver/ex7/app.go -db mysql
+$ go run httpserver/ex7/server.go httpserver/ex7/app.go -db sqlite
+```
+
 
 Do some HTTP calls:
 

@@ -8,6 +8,9 @@ github.com/go-sql-driver/mysql
 ## explicit
 github.com/jmoiron/sqlx
 github.com/jmoiron/sqlx/reflectx
+# github.com/mattn/go-sqlite3 v1.9.0
+## explicit
+github.com/mattn/go-sqlite3
 # go.uber.org/atomic v1.6.0
 go.uber.org/atomic
 # go.uber.org/multierr v1.5.0

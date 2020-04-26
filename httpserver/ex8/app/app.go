@@ -116,10 +116,14 @@ func (a *App) handleList(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+type errorLogger interface {
+	Error(msg string, fields ...zap.Field)
+}
+
 // sendError will send a JSON instead of a simple string and do some logging.
 // Ideally this should have it's own package with other HTTP related helpers.
 // And of course it could have it's own `logger` injected as a context at init etc...
-func sendError(logger *zap.Logger, w http.ResponseWriter, err error, code int) {
+func sendError(logger errorLogger, w http.ResponseWriter, err error, code int) {
 	logger.Error("error on backend", zap.Error(err), zap.Int("code", code))
 
 	w.WriteHeader(code)

@@ -4,6 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
 	"time"
 
@@ -115,4 +116,92 @@ func TestListHandlerWithResults(t *testing.T) {
 
 	require.Equal(t, http.StatusOK, rr.Code)
 	assert.Equal(t, `{"messages":[{"id":1,"name":"testName1","message":"testMessage1","created":"2020-04-27T10:10:20Z"},{"id":2,"name":"testName2","message":"testMessage2","created":"2020-04-27T10:11:20Z"}]}`+"\n", rr.Body.String())
+}
+
+func TestAddHandlerInvalidInput(t *testing.T) {
+	dbMock := &mockDatabase{}
+	app := NewApp(zap.NewNop(), dbMock)
+
+	testTable := []struct {
+		inputJSON      string
+		expectedCode   int
+		expectedOutput string
+	}{
+		{`invalid`, 400, `{"error":"invalid character 'i' looking for beginning of value","code":400}`},
+		{`{}`, 400, `{"error":"name or message could not be empty","code":400}`},
+		{`{"name":"a"}`, 400, `{"error":"name or message could not be empty","code":400}`},
+	}
+
+	rr := httptest.NewRecorder()
+	for _, tt := range testTable {
+		req, _ := http.NewRequest(http.MethodGet, "/", strings.NewReader(tt.inputJSON))
+		app.handleAdd(rr, req)
+
+		assert.Equal(t, tt.expectedCode, rr.Code)
+		assert.Equal(t, tt.expectedOutput+"\n", rr.Body.String())
+		rr.Body.Reset() // Don't forget this!
+	}
+}
+
+func TestAddHandlerDBError(t *testing.T) {
+	dbMock := &mockDatabase{}
+	app := NewApp(zap.NewNop(), dbMock)
+
+	dbMock.On("Exec", "INSERT INTO message (`name`, `message`) VALUES (?,?)", "testName", "testMessage").
+		Return(nil, errors.New("testError"))
+
+	rr := httptest.NewRecorder()
+	req, _ := http.NewRequest(http.MethodGet, "/", strings.NewReader(`{"name":"testName","message":"testMessage"}`))
+	app.handleAdd(rr, req)
+
+	assert.Equal(t, http.StatusInternalServerError, rr.Code)
+	assert.Equal(t, `{"error":"testError","code":500}`+"\n", rr.Body.String())
+}
+
+func TestAddHandlerOK(t *testing.T) {
+	dbMock := &mockDatabase{}
+	app := NewApp(zap.NewNop(), dbMock)
+
+	dbMock.On("Exec", "INSERT INTO message (`name`, `message`) VALUES (?,?)", "testName", "testMessage").
+		Return(mockResult{
+			id: 11,
+		}, nil)
+
+	rr := httptest.NewRecorder()
+	req, _ := http.NewRequest(http.MethodGet, "/", strings.NewReader(`{"name":"testName","message":"testMessage"}`))
+	app.handleAdd(rr, req)
+
+	assert.Equal(t, http.StatusOK, rr.Code)
+	assert.Equal(t, `{"id":11}`+"\n", rr.Body.String())
+}
+
+type mockResult struct {
+	id int64
+}
+
+func (mr mockResult) LastInsertId() (int64, error) {
+	return mr.id, nil
+}
+
+func (mockResult) RowsAffected() (int64, error) {
+	return 0, nil
+}
+
+func TestSendError(t *testing.T) {
+	mel := &mockErrorLogger{}
+	rr := httptest.NewRecorder()
+	sendError(mel, rr, errors.New("testError"), 444)
+
+	assert.Equal(t, "error on backend", mel.msg)
+	assert.Equal(t, `{"error":"testError","code":444}`+"\n", rr.Body.String())
+}
+
+type mockErrorLogger struct {
+	msg    string
+	fields []zap.Field
+}
+
+func (mel *mockErrorLogger) Error(msg string, fields ...zap.Field) {
+	mel.msg = msg
+	mel.fields = fields
 }

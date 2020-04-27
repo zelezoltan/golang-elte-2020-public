@@ -49,6 +49,7 @@ Easter holiday.
 
 [HTTP server](httpserver/README.md)
 [Packages](packages/README.md)
+[Binary packing](binary-packing/README.md)
 
 ### 2020-05-04
 

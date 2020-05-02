@@ -1,6 +1,6 @@
 # Glide example
 
-1, Install glide
+1, Install glide https://glide.sh/
 
 2, Init it in your project root
 

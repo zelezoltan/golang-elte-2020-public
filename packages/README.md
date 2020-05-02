@@ -9,3 +9,4 @@ Later in `1.9` we got the official version called [dep](https://github.com/golan
 [Example](dep/README.md)
 
 Finally in `1.11` they introduced the [modules](https://blog.golang.org/using-go-modules).
+[Example](module/README.md)

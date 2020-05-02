@@ -14,10 +14,6 @@ import (
 	app "github.com/gerifield/golang-elte-2020-public/httpserver/ex8/app"
 )
 
-const (
-	dbSqlite = "sqlite"
-)
-
 func main() {
 	addr := flag.String("listen", ":8080", "Listening address")
 	sqliteConfig := flag.String("sqlitedb", "file:httpserver/ex8/sqlite.db?cache=shared", "SQLite database connection string")

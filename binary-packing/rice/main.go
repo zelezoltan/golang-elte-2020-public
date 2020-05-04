@@ -9,8 +9,10 @@ import (
 	rice "github.com/GeertJohan/go.rice"
 )
 
+//go:generate rice embed-go
+
 func main() {
-	addr := flag.String("addr", ":8080", "HTTP Listen addre")
+	addr := flag.String("addr", ":8080", "HTTP Listen address")
 	flag.Parse()
 
 	box := rice.MustFindBox("static")

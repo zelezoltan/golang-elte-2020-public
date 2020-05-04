@@ -47,9 +47,17 @@ Easter holiday.
 
 ### 2020-04-27
 
+[HTTP server](httpserver/README.md)
+
 ### 2020-05-04
 
+[Packages](packages/README.md)
+
+[Binary packing](binary-packing/README.md)
+
 ### 2020-05-11
+
+[CGO basics]()
 
 ### Recommended Book
 

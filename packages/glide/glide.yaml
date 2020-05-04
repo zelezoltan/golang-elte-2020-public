@@ -1,0 +1,4 @@
+package: github.com/gerifield/golang-elte-2020-public/packages/glide
+import:
+- package: github.com/google/uuid
+  version: ^1.1.1

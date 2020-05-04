@@ -1,0 +1,6 @@
+hash: 8702c6cb727517da673dab4c3127079d054385ccc4632f103f6a530a49421a4b
+updated: 2020-05-02T21:56:24.75567+02:00
+imports:
+- name: github.com/google/uuid
+  version: 0cd6bf5da1e1c83f8b45653022c74f71af0538a4
+testImports: []

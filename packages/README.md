@@ -1,6 +1,7 @@
 # Packages
 
 In the past there was nothing else, just GOPATH manipulation and `go get`.
+And people find a way with generated package renaming like: `https://gopkg.in/yaml.v2`
 
 In `1.5` we got the vendor folder then a lot of tooling around it, for example [glide](https://github.com/Masterminds/glide).
 [Example](glide/README.md)
